@@ -23,7 +23,7 @@ MODULES="--with-threads --with-file-aio --with-http_ssl_module --with-http_v2_mo
 
 CONFIG_OPTIONS="$MODULES --http-log-path=$LOG_PATH --http-client-body-temp-path=$CLIENT_BODY_TEMP_PATH --prefix=$PREFIX --sbin-path=$SBIN_PATH --modules-path=$MODULES_PATH --conf-path=$CONF_PATH --error-log-path=$ERROR_LOG_PATH --pid-path=$PID_PATH --lock-path=$LOCK_PATH --user=$USER --group=$GROUP --builddir=$BUILDDIR --with-zlib=$SOURCE_DIR/zlib --with-pcre=$SOURCE_DIR/pcre --with-openssl=$SOURCE_DIR/openssl --with-debug --with-cc-opt="-Wno-error=deprecated-declarations""
 
-apt install libtool libperl-dev g++ gcc make subversion mercurial git
+apt install libtool libperl-dev wget tar gzip g++ gcc make subversion mercurial git
 
 mkdir -pv $CONTAINMENT_DIR
 cd $CONTAINMENT_DIR
