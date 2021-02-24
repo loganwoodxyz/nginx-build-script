@@ -1,4 +1,12 @@
 #!/bin/sh
+
+#This is a shell script written and intended for 64-bit Debian and Debian-based distributions of the GNU + Linux OS.
+#BASIC FUNCTION: to install make dependencies and build NGINX from source.
+#CUSTOMIZATION: The directories NGINX will be installed are listed below. These are the defaults documented by NGINX.org.
+#               If you wish to change the directories that NGINX installs in, you should edit the list below.
+#               Further, The optional modules and config options are set to my preferences. If you would like to add
+#               or remove certain modules or config options, be my guest.
+
 TOP=$PWD
 CONTAINMENT_DIR=$TOP/nginx-autobuild
 SOURCE_DIR=$CONTAINMENT_DIR/nginx
