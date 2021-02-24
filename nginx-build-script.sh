@@ -35,21 +35,17 @@ apt install libtool libperl-dev wget tar gzip g++ gcc make subversion mercurial 
 
 mkdir -pv $CONTAINMENT_DIR
 cd $CONTAINMENT_DIR
-hg clone http://hg.nginx.org/nginx
+[ ! -d nginx ] && hg clone http://hg.nginx.org/nginx
 cd $SOURCE_DIR 
-rm -rvf openssl pcre zlib
 mkdir -pv $PREFIX 
 mkdir -pv $SBIN_PATH
 mkdir -pv $MODULES_PATH
 mkdir -pv $PREFIX/conf
 mkdir -pv $PREFIX/logs
 
-svn co svn://vcs.pcre.org/pcre/code/trunk pcre
-git clone https://github.com/openssl/openssl
-wget https://www.zlib.net/zlib-1.2.11.tar.gz -O zlib.tar.gz
-tar -xvzf zlib.tar.gz
-rm zlib.tar.gz
-mv -v zlib-* zlib
+[ ! -d pcre ] && svn co svn://vcs.pcre.org/pcre/code/trunk pcre
+[ ! -d openssl ] && git clone https://github.com/openssl/openssl
+[ ! -d zlib ] && wget https://www.zlib.net/zlib-1.2.11.tar.gz -O zlib.tar.gz && tar -xvzf zlib.tar.gz && rm zlib.tar.gz && mv -v zlib-* zlib
 
 cd pcre
 sh autogen.sh
